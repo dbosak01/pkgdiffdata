@@ -14,10 +14,19 @@ res <- get_stability_data(pkgs)
 
 stability <- rbind(stability, res)
 
-
-saveRDS(stability, "c:/packages/pkgdiffdata/data/stability2.rds")
+fl <- "c:/packages/pkgdiffdata/data/stability3.rds"
+save(stability, file = fl)
 
 tvers <- tidyverse::tidyverse_packages()
 
 
 res2 <- get_stability_data(tvers)
+
+
+load(fl)
+
+unique(stability$Package)
+
+pkgs <- c("common", "procs", "libr", "defineR", "reporter", "fmtr", "sassy", "logr")
+
+report_stability(pkgs)
