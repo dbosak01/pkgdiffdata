@@ -30,7 +30,7 @@ create_package_data <- function(pkg) {
   ret[["stability"]] <- dat
   ret[["infos"]] <- infos
 
-  fl <- file.path("data", paste0(pkg, ".rds"))
+  fl <- file.path("data", paste0(pkg, ".Rdata"))
 
   save(ret, file = fl)
 
@@ -56,4 +56,4 @@ pkvect <- pkgdiff:::get_latest_version(pkgs)
 
 save(pkvect, file = "packages.rds")
 
-
+procs$
