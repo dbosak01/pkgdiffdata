@@ -30,7 +30,7 @@ create_package_data <- function(pkg) {
   ret[["stability"]] <- dat
   ret[["infos"]] <- infos
 
-  fl <- file.path("data", paste0(pkg, ".Rdata"))
+  fl <- file.path("data", paste0(pkg, ".RData"))
 
   save(ret, file = fl)
 
@@ -52,8 +52,20 @@ for (pkg in pkgs) {
 }
 
 
-pkvect <- pkgdiff:::get_latest_version(pkgs)
+# More test packages
+tverse <- tidyverse::tidyverse_packages()
+
+for (pkg in tverse) {
+
+  res <- create_package_data(pkg)
+
+}
+
+
+allpkgs <- c(pkgs, tverse)
+
+pkvect <- pkgdiff:::get_latest_version(allpkgs)
 
 save(pkvect, file = "packages.rds")
 
-procs$
+
