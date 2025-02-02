@@ -63,9 +63,19 @@ for (pkg in tverse) {
 
 
 # Test vector
-pkgs <- c("admiral", "Tplyr", "rtables", "pkglite", "tfrmt", "tidytlg", "xportr", "gtsummary")
+pverse <- c("admiral", "Tplyr", "rtables", "pkglite", "tfrmt", "tidytlg", "xportr", "gtsummary")
 
-for (pkg in pkgs) {
+for (pkg in pverse) {
+
+  res <- create_package_data(pkg)
+
+}
+
+
+# Test vector
+toppks <- c("lifecycle", "vctrs", "glue", "stringi", "tidyselect", "knitr", "scales", "fansi")
+
+for (pkg in toppks) {
 
   res <- create_package_data(pkg)
 
@@ -73,7 +83,8 @@ for (pkg in pkgs) {
 
 
 
-allpkgs <- c(pkgs, tverse)
+
+allpkgs <- c(pkgs, tverse, pverse, toppks)
 
 pkvect <- pkgdiff:::get_latest_version(allpkgs)
 
