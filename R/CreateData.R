@@ -38,7 +38,7 @@ create_package_data <- function(pkg) {
 }
 
 # Test
-res <- create_package_data("procs")
+res <- create_package_data("defineR")
 
 
 
@@ -60,6 +60,17 @@ for (pkg in tverse) {
   res <- create_package_data(pkg)
 
 }
+
+
+# Test vector
+pkgs <- c("admiral", "Tplyr", "rtables", "pkglite", "tfrmt", "tidytlg", "xportr", "gtsummary")
+
+for (pkg in pkgs) {
+
+  res <- create_package_data(pkg)
+
+}
+
 
 
 allpkgs <- c(pkgs, tverse)
