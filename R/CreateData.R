@@ -32,6 +32,9 @@ create_package_data <- function(pkg) {
 
   fl <- file.path("data", paste0(pkg, ".RData"))
 
+  if (file.exists(fl))
+    file.remove(fl)
+
   save(ret, file = fl)
 
   return(ret)
