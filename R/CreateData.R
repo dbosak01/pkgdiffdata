@@ -38,7 +38,7 @@ create_package_data <- function(pkg) {
 }
 
 # Test
-res <- create_package_data("defineR")
+res <- create_package_data("admiral")
 
 
 
@@ -81,10 +81,43 @@ for (pkg in toppks) {
 
 }
 
+# Test vector
+morepks <- c("rmarkdown", "fs", "tinytex", "fontawesome", "digest", "xfun", "sys",
+             "openssl", "askpass", "curl")
+
+for (pkg in morepks) {
+
+  res <- create_package_data(pkg)
+
+}
+
+
+# Test vector
+elipks <- c("drake", "targets")
+
+for (pkg in elipks) {
+
+  res <- create_package_data(pkg)
+
+}
+
+
+# Stats vector
+statspks <- c("survival", "car", "emmeans", "mmrm", "lme4", "lmerTest",
+              "VGAM", "MASS")
+
+for (pkg in statspks) {
+
+  res <- create_package_data(pkg)
+
+}
 
 
 
-allpkgs <- c(pkgs, tverse, pverse, toppks)
+
+
+
+ allpkgs <- c(pkgs, tverse, pverse, toppks, morepks, elipks, statspks)
 
 pkvect <- pkgdiff:::get_latest_version(allpkgs)
 
