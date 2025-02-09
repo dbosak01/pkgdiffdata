@@ -3,6 +3,7 @@
 remotes::install_github("https://github.com/dbosak01/pkgdiff")
 
 
+
 library(pkgdiff)
 #library(packageDiff)
 
@@ -161,6 +162,8 @@ for (pkg in apkgs) {
 
 pkvect <- pkgdiff:::get_latest_version(allpkgs)
 
-save(pkvect, file = "packages.rds")
+df <- data.frame(Package = "", Version = "")
+
+save(df, file = "packages.rds")
 
 
