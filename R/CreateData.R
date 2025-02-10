@@ -18,6 +18,7 @@ github_data <- function(pkg, versions = NULL) {
 
 }
 
+
 create_package_data <- function(pkg) {
 
   ret <- list()
@@ -42,7 +43,7 @@ create_package_data <- function(pkg) {
 }
 
 # Test
-res <- create_package_data("admiral")
+res <- create_package_data("selectr")
 
 
 
@@ -118,39 +119,40 @@ for (pkg in statspks) {
 
 
 
-apkgs <- c("selectr", "DBI", "R.cache",
+apkgs <- c("DBI", "R.cache",
 "R.methodsS3",           "R.oo",                  "R.utils" ,              "R6",
 "RJDBC",                 "Rcpp",                  "RcppTOML",
 "base64enc",             "bit",                   "bit64",                 "blob",
 "brew",                  "brio",                  "bslib",                 "cachem" ,
-"callr",                 "cli",                   "clipr",                 "commonmark" ,
+"callr",                                   "clipr",                 "commonmark" ,
 "config",                "covr",                  "cpp11",                 "crayon",
 "credentials",                           "desc",                  "devtools",
 "diffobj",                             "downlit",
 "ellipsis",              "evaluate",                            "fastmap" ,
                    "generics",              "gert" ,
 "gh",                    "gitcreds",                         "gtools" ,
-"here",                  "highr",                 "hms",                   "htmltools",
-"htmlwidgets",           "httpuv",                "httr",                  "httr2" ,
+"here",                  "highr",                                    "htmltools",
+"htmlwidgets",           "httpuv",                                "httr2" ,
 "ini",                   "jquerylib",
 "later",                 "lazyeval",
 "memoise",               "mime",                  "miniUI",                "odbc"     ,
                                "pkgbuild",              "pkgconfig",
 "pkgdown",               "pkgload",               "png",                   "praise"     ,
 "prettyunits",           "processx",              "profvis",               "promises"    ,
-"ps",                                    "rJava",                 "ragg"         ,
+"ps",                                    "rJava",                        ,
 "rappdirs",              "rcmdcheck",             "rematch2",              "remotes"       ,
 "renv",                  "reticulate",            "rex",
             "roxygen2",              "rprojroot",
 "rversions",             "sass",                  "sessioninfo",           "shiny",
-"sourcetools",           "stringi",                              "styler",
+"sourcetools",                                        "styler",
                    "systemfonts",           "testthat",              "textshaping",
-               "tidyselect",                          "urlchecker",
+                                       "urlchecker",
 "usethis",               "utf8",                                 "waldo",
-"whisker",               "withr",                 "xfun",
-"xopen",                 "xtable",                "yaml",                  "zip",
-"rlang")
+"whisker",               "withr",
+"xopen",                 "xtable")
 
+
+tmp <- c(  "selectr", "yaml",                  "zip")
 for (pkg in apkgs) {
 
   res <- create_package_data(pkg)
