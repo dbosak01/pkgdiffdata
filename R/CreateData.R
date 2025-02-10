@@ -38,7 +38,7 @@ create_package_data <- function(pkg) {
 }
 
 # Test
-res <- create_package_data("procs")
+res <- create_package_data("crayon")
 
 
 
@@ -156,7 +156,9 @@ for (pkg in apkgs) {
 
  allpkgs <- c(pkgs, tverse, pverse, toppks, morepks, elipks, statspks, apkgs)
 
-pkvect <- pkgdiff:::get_latest_version(pkgs)
+mpkgs <- c(pkgs, "tibble", "rvest", "crayon")
+
+pkvect <- pkgdiff:::get_latest_version(mpkgs)
 
 
 save(pkvect, file = "packages.rds")
