@@ -77,10 +77,12 @@ for (pkg in toppks) {
 }
 
 # Test vector
-morepks <- c("rmarkdown", "fs", "tinytex", "fontawesome", "digest", "xfun", "sys",
+morepks <- c("rmarkdown", "fs", "tinytex", "fontawesome",
              "openssl", "askpass", "curl")
 
-for (pkg in morepks) {
+mpks <- c("openssl", "askpass", "curl")
+
+for (pkg in mpks) {
 
   res <- create_package_data(pkg)
 
@@ -139,7 +141,7 @@ apkgs <- c("DBI", "R.cache",
                                        "urlchecker",
 "usethis",               "utf8",                                 "waldo",
 "whisker",               "withr",
-"xopen",                 "xtable")
+"xopen",                 "xtable", "xfun", "sys")
 
 
 tmp <- c(  "selectr", "yaml",                  "zip")
@@ -152,7 +154,7 @@ for (pkg in apkgs) {
 
  allpkgs <- c(pkgs, tverse, pverse, toppks, morepks, elipks, statspks, apkgs)
 
-mpkgs <- c(pkgs,  "crayon", "admiral", tverse, pverse, toppks)
+mpkgs <- c(pkgs,  "crayon", "admiral", tverse, pverse, toppks, morepks)
 
 pkvect <- pkgdiff:::get_latest_version(mpkgs)
 
