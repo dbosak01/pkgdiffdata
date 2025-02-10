@@ -10,14 +10,10 @@ library(pkgdiff)
 pkgs <- c("common", "procs", "libr", "defineR", "reporter", "fmtr", "sassy", "logr")
 
 
+# pkg_info("common")
 
 
-github_data <- function(pkg, versions = NULL) {
-
-
-
-}
-
+pkg <- "procs"
 create_package_data <- function(pkg) {
 
   ret <- list()
@@ -42,7 +38,7 @@ create_package_data <- function(pkg) {
 }
 
 # Test
-res <- create_package_data("admiral")
+res <- create_package_data("procs")
 
 
 
@@ -160,10 +156,9 @@ for (pkg in apkgs) {
 
  allpkgs <- c(pkgs, tverse, pverse, toppks, morepks, elipks, statspks, apkgs)
 
-pkvect <- pkgdiff:::get_latest_version(allpkgs)
+pkvect <- pkgdiff:::get_latest_version(pkgs)
 
-df <- data.frame(Package = "", Version = "")
 
-save(df, file = "packages.rds")
+save(pkvect, file = "packages.rds")
 
 
