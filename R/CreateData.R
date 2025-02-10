@@ -5,18 +5,9 @@ remotes::install_github("https://github.com/dbosak01/pkgdiff")
 
 
 library(pkgdiff)
-#library(packageDiff)
-
-pkgs <- c("common", "procs", "libr", "defineR", "reporter", "fmtr", "sassy", "logr")
 
 
 
-
-github_data <- function(pkg, versions = NULL) {
-
-
-
-}
 
 
 create_package_data <- function(pkg) {
@@ -43,8 +34,7 @@ create_package_data <- function(pkg) {
 }
 
 # Test
-res <- create_package_data("selectr")
-
+res <- create_package_data("crayon")
 
 
 # Test vector
@@ -162,7 +152,10 @@ for (pkg in apkgs) {
 
  allpkgs <- c(pkgs, tverse, pverse, toppks, morepks, elipks, statspks, apkgs)
 
-pkvect <- pkgdiff:::get_latest_version(allpkgs)
+mpkgs <- c(pkgs, "tibble", "rvest", "crayon")
+
+pkvect <- pkgdiff:::get_latest_version(mpkgs)
+
 
 save(pkvect, file = "packages.rds")
 
