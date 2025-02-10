@@ -152,7 +152,7 @@ for (pkg in apkgs) {
 
  allpkgs <- c(pkgs, tverse, pverse, toppks, morepks, elipks, statspks, apkgs)
 
-mpkgs <- c(pkgs, "tibble", "rvest", "crayon")
+mpkgs <- c(pkgs,  "crayon", "admiral", tverse)
 
 pkvect <- pkgdiff:::get_latest_version(mpkgs)
 
