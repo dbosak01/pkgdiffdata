@@ -14,7 +14,7 @@ tlst <- cran_top_downloads(count = 100)
 
 
 # For now
-pkgs <- tlst$package
+pkgs <- tlst$package[25:100]
 
 for (pkg in pkgs) {
 
