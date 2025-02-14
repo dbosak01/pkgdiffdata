@@ -26,9 +26,7 @@ pkg_info("dplyr")
 pkg_stability("fansi")
 
 # View package stability
-dres <- pkg_stability("dplyr")
-
-Sys.Date() - dres$StabilityData$Release
+pkg_stability("dplyr")
 
 # Compare versions
 pkg_diff("dplyr", "1.0.10", "1.1.0")
