@@ -11,18 +11,22 @@ spkgs <- pkgdiff:::github_packages()
 # For now, filter by top downloads
 tlst <- cran_top_downloads(count = 100)
 
-flst <- apkgs[apkgs$Package %in% tlst$package, ]
 
-names(flst)
 
 # For now
-tmplst <- lst[1:100, ]
-for (idx in seq_len(nrow(tmplst))) {
+pkgs <- tlst$package
 
-  pkg <- tmplst[[idx, "Package"]]
-  print(pkg)
+for (pkg in pkgs) {
 
-  tmplst[idx, "Popular"] <- pkgdiff:::is_popular(pkg)
+
+
+  if (pkgdiff:::is_popular(pkg)) {
+
+    cat(paste0("Processing ", pkg, "...\n"))
+
+    create_package_data(pkg)
+
+  }
 }
 
 
