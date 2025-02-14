@@ -54,10 +54,20 @@ update_package_list <- function() {
     info <- local_package(fl)
     pkver[idx] <- info$stability[1, "Version"]
     pknms[idx] <- info$stability[1, "Package"]
+    idx <- idx + 1
   }
 
   names(pkver) <- pknms
 
-  save(pkver, file = "packages.rds")
+  pf <- "packages.rds"
+  if (file.exists(pf))
+    unlink(pf)
+
+  save(pkver, file = pf)
+
+  return(pkver)
 
 }
+
+ml <- update_package_list()
+length(ml)
