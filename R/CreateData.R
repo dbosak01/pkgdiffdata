@@ -58,10 +58,12 @@ for (pkg in elipks) {
 
 }
 
-
+# "survival" has error reading S file
 # Stats vector
-statspks <- c("survival", "car", "emmeans", "mmrm", "lme4", "lmerTest",
+statspks <- c("car", "emmeans", "mmrm", "lme4", "lmerTest",
               "VGAM", "MASS", "Matrix")
+
+s2 <- c("stability", "Hmisc", "VGAM", "MASS", "Matrix")
 
 for (pkg in statspks) {
 
