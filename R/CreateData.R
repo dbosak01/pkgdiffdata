@@ -49,12 +49,8 @@ for (pkg in pverse) {
 
 
 
-
-
-
-
 # Test vector
-elipks <- c("drake", "targets")
+elipks <- c("drake", "targets", "r2rtf", "officer", "flextable", "Hmisc")
 
 for (pkg in elipks) {
 
@@ -65,7 +61,7 @@ for (pkg in elipks) {
 
 # Stats vector
 statspks <- c("survival", "car", "emmeans", "mmrm", "lme4", "lmerTest",
-              "VGAM", "MASS")
+              "VGAM", "MASS", "Matrix")
 
 for (pkg in statspks) {
 
@@ -116,13 +112,5 @@ for (pkg in apkgs) {
 }
 
 
- allpkgs <- c(pkgs, tverse, pverse, toppks, morepks, elipks, statspks, apkgs)
-
-mpkgs <- c(pkgs,  "crayon", "admiral", tverse, pverse, toppks, morepks)
-
-pkvect <- pkgdiff:::get_latest_version(mpkgs)
-
-
-save(pkvect, file = "packages.rds")
-
-
+ml <- update_package_list()
+length(ml)
