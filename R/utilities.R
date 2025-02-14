@@ -1,4 +1,5 @@
-
+library(pkgdiff)
+library(common)
 
 
 create_package_data <- function(pkg) {
@@ -22,4 +23,41 @@ create_package_data <- function(pkg) {
   save(ret, file = fl)
 
   return(ret)
+}
+
+
+local_package <- function(pth) {
+
+  fl <- pth
+
+  info <- tryCatch({
+    ret <- get(load(fl))
+    ret
+  },
+  error = function(e){NULL})
+
+  return(info)
+
+}
+
+update_package_list <- function() {
+
+  d <- "./data"
+
+  fls <- file.find(d, "*.RData", up = 0, down = 1)
+
+  pknms <- c()
+  pkver <- c()
+
+  idx <- 1
+  for (fl in fls) {
+    info <- local_package(fl)
+    pkver[idx] <- info$stability[1, "Version"]
+    pknms[idx] <- info$stability[1, "Package"]
+  }
+
+  names(pkver) <- pknms
+
+  save(pkver, file = "packages.rds")
+
 }
