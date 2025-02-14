@@ -71,3 +71,7 @@ update_package_list <- function() {
 
 ml <- update_package_list()
 length(ml)
+
+
+mt <- cranlogs::cran_top_downloads(count = 100)
+"scales" %in% mt$package

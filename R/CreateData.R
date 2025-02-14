@@ -8,7 +8,7 @@ library(pkgdiff)
 
 
 
-
+mt <- cranlogs::cran_top_downloads(count = 100)
 
 
 # Test
@@ -28,7 +28,10 @@ for (pkg in pkgs) {
 # More test packages
 tverse <- tidyverse::tidyverse_packages()
 
-for (pkg in tverse) {
+res <- tverse %in% mt$package
+tverse2 <- tverse[!res]
+
+for (pkg in tverse2) {
 
   res <- create_package_data(pkg)
 
@@ -45,26 +48,9 @@ for (pkg in pverse) {
 }
 
 
-# Test vector
-toppks <- c("lifecycle", "vctrs", "glue", "stringi", "tidyselect", "knitr", "scales", "fansi")
 
-for (pkg in toppks) {
 
-  res <- create_package_data(pkg)
 
-}
-
-# Test vector
-morepks <- c("rmarkdown", "fs", "tinytex", "fontawesome",
-             "openssl", "askpass", "curl")
-
-mpks <- c("openssl", "askpass", "curl")
-
-for (pkg in mpks) {
-
-  res <- create_package_data(pkg)
-
-}
 
 
 # Test vector
