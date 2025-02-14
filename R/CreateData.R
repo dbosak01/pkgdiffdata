@@ -62,10 +62,10 @@ for (pkg in elipks) {
 # Stats vector
 statspks <- c("car", "emmeans", "mmrm", "lme4", "lmerTest",
               "VGAM", "MASS", "Matrix")
+#"survival", "Hmisc",
+s2 <- c( "VGAM", "MASS", "Matrix")
 
-s2 <- c("stability", "Hmisc", "VGAM", "MASS", "Matrix")
-
-for (pkg in statspks) {
+for (pkg in s2) {
 
   res <- create_package_data(pkg)
 
@@ -93,7 +93,7 @@ apkgs <- c("DBI", "R.cache",
                                "pkgbuild",              "pkgconfig",
 "pkgdown",               "pkgload",               "png",                   "praise"     ,
 "prettyunits",           "processx",              "profvis",               "promises"    ,
-"ps",                                    "rJava",                        ,
+"ps",                                    "rJava",
 "rappdirs",              "rcmdcheck",             "rematch2",              "remotes"       ,
 "renv",                  "reticulate",            "rex",
             "roxygen2",              "rprojroot",
@@ -103,11 +103,11 @@ apkgs <- c("DBI", "R.cache",
                                        "urlchecker",
 "usethis",               "utf8",                                 "waldo",
 "whisker",               "withr",
-"xopen",                 "xtable", "xfun", "sys")
+"xopen",                 "xtable", "xfun", "sys",  "selectr", "yaml",                  "zip")
 
 
-tmp <- c(  "selectr", "yaml",                  "zip")
-for (pkg in apkgs) {
+tmp <- apkgs[!apkgs %in% names(ml)]
+for (pkg in tmp) {
 
   res <- create_package_data(pkg)
 
