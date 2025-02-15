@@ -11,21 +11,22 @@ spkgs <- pkgdiff:::github_packages()
 # For now, filter by top downloads
 tlst <- cran_top_downloads(count = 100)
 
+lst <- apkgs$Package[!apkgs$Package %in% names(spkgs)]
 
+popularity <- 25000
 
-# For now
-pkgs <- tlst$package[25:100]
+for (pkg in lst) {
 
-for (pkg in pkgs) {
+  fl <- file.path("./data", paste0(pkg, ".RData"))
 
+  if (!file.exists(fl)) {
 
+    if (pkgdiff:::is_popular(pkg, popularity)) {
 
-  if (pkgdiff:::is_popular(pkg)) {
+      cat(paste0("Processing ", pkg, "...\n"))
 
-    cat(paste0("Processing ", pkg, "...\n"))
-
-    create_package_data(pkg)
-
+      #create_package_data(pkg)
+    }
   }
 }
 
