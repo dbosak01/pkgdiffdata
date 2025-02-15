@@ -9,7 +9,7 @@ spkgs <- pkgdiff:::github_packages()
 
 
 # For now, filter by top downloads
-tlst <- cran_top_downloads(count = 100)
+# tlst <- cran_top_downloads(count = 100)
 
 lst <- apkgs$Package[!apkgs$Package %in% names(spkgs)]
 
@@ -25,7 +25,7 @@ for (pkg in lst) {
 
       cat(paste0("Processing ", pkg, "...\n"))
 
-      #create_package_data(pkg)
+      create_package_data(pkg)
     }
   }
 }
