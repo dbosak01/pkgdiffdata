@@ -8,19 +8,21 @@ create_package_data <- function(pkg) {
 
   infos <- pkgdiff:::get_all_infos(pkg)
 
+  if (!is.null(infos)) {
 
-  dat <- pkgdiff:::get_info_data(pkg, infos)
+    dat <- pkgdiff:::get_info_data(pkg, infos)
 
 
-  ret[["stability"]] <- dat
-  ret[["infos"]] <- infos
+    ret[["stability"]] <- dat
+    ret[["infos"]] <- infos
 
-  fl <- file.path("data", paste0(pkg, ".RData"))
+    fl <- file.path("data", paste0(pkg, ".RData"))
 
-  if (file.exists(fl))
-    file.remove(fl)
+    if (file.exists(fl))
+      file.remove(fl)
 
-  save(ret, file = fl)
+    save(ret, file = fl)
+  }
 
   return(ret)
 }

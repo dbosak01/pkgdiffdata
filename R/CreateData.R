@@ -12,7 +12,7 @@ mt <- cranlogs::cran_top_downloads(count = 100)
 
 
 # Test
-res <- create_package_data("digest")
+res <- create_package_data("procs")
 
 
 # Test vector
@@ -134,3 +134,13 @@ for (pkg in tmp) {
 
 ml <- update_package_list()
 length(ml)
+
+
+for (pkg in names(ml)) {
+
+  res <- create_package_data(pkg)
+
+}
+
+
+
