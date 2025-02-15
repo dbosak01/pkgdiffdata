@@ -47,7 +47,26 @@ for (pkg in pverse) {
 
 }
 
+# "aNCA" "cardinal",
+# Test vector
+pverse2 <- c("admiralonco", "admiralophtha", "admiralpeds",
+"admiralvaccine",  "cards", "cardx", "chevron",
+"covtracer", "datacutr", "datasetjson", "diffdf", "envsetup", "ggsurvfit",
+"logrx", "metacore", "metatools", "pharmaRTF", "pharmaverseadam", "pharmaversesdtm",
+"rhino", "riskassessment", "riskmetric", "rlistings", "sdtm.oak", "sdtmchecks",
+"teal", "tern", "tfrmtbuilder", "thevalidatoR", "tidyCDISC", "valtools")
 
+p2 <- pverse2[!pverse2 %in% names(ml)]
+
+for (pkg in p2) {
+
+  res <- create_package_data(pkg)
+
+}
+
+
+
+pkgdiff:::github_packages(elipks)
 
 # Test vector
 elipks <- c("drake", "targets", "r2rtf", "officer", "flextable", "Hmisc")
@@ -60,10 +79,9 @@ for (pkg in elipks) {
 
 # "survival" has error reading S file
 # Stats vector
-statspks <- c("car", "emmeans", "mmrm", "lme4", "lmerTest",
+statspks <- c("survival", "car", "emmeans", "mmrm", "lme4", "lmerTest",
               "VGAM", "MASS", "Matrix")
-#"survival", "Hmisc",
-s2 <- c( "VGAM", "MASS", "Matrix")
+
 
 for (pkg in s2) {
 
@@ -71,7 +89,7 @@ for (pkg in s2) {
 
 }
 
-
+#  "gtools"  "xtable",
 
 apkgs <- c("DBI", "R.cache",
 "R.methodsS3",           "R.oo",                  "R.utils" ,              "R6",
@@ -84,7 +102,7 @@ apkgs <- c("DBI", "R.cache",
 "diffobj",                             "downlit",
 "ellipsis",              "evaluate",                            "fastmap" ,
                    "generics",              "gert" ,
-"gh",                    "gitcreds",                         "gtools" ,
+"gh",                    "gitcreds",
 "here",                  "highr",                                    "htmltools",
 "htmlwidgets",           "httpuv",                                "httr2" ,
 "ini",                   "jquerylib",
@@ -103,7 +121,7 @@ apkgs <- c("DBI", "R.cache",
                                        "urlchecker",
 "usethis",               "utf8",                                 "waldo",
 "whisker",               "withr",
-"xopen",                 "xtable", "xfun", "sys",  "selectr", "yaml",                  "zip")
+"xopen",                 "xfun", "sys",  "selectr", "yaml",                  "zip")
 
 
 tmp <- apkgs[!apkgs %in% names(ml)]
