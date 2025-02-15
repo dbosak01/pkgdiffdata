@@ -12,7 +12,7 @@ mt <- cranlogs::cran_top_downloads(count = 100)
 
 
 # Test
-res <- create_package_data("survival")
+res <- create_package_data("digest")
 
 
 # Test vector
