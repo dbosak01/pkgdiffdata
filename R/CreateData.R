@@ -10,9 +10,14 @@ library(pkgdiff)
 
 mt <- cranlogs::cran_top_downloads(count = 100)
 
+pkg <- "bayess"
+pkg <- "duckdb"
+pkgdiff:::github_packages(pkg)
+
+pkg_info(pkg)
 
 # Test
-res <- create_package_data("Deriv")
+res <- create_package_data(pkg)
 
 
 # Test vector
@@ -134,6 +139,8 @@ for (pkg in tmp) {
 
 ml <- update_package_list()
 length(ml)
+
+"huxtable" %in% names(ml)
 
 
 for (pkg in names(ml)) {
