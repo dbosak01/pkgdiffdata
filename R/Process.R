@@ -7,8 +7,8 @@ apkgs <- pkgdiff:::available_packages()
 spkgs <- pkgdiff:::github_packages()
 
 
-apkgs[apkgs$Package == 'leaps', ]
-apkgs <- apkgs[seq(9958, nrow(apkgs)), ]
+apkgs[apkgs$Package == 'Matrix', ]
+apkgs <- apkgs[seq(10747, nrow(apkgs)), ]
 
 # For now, filter by top downloads
 # tlst <- cran_top_downloads(count = 100)
