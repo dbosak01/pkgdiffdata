@@ -15,8 +15,10 @@ apkgs <- apkgs[seq(10747, nrow(apkgs)), ]
 
 lst <- apkgs$Package[!apkgs$Package %in% names(spkgs)]
 
-popularity <- 25000
-brks <- c()
+lst <- lst[!lst %in% c("Matrix") ]
+
+popularity <- 20000
+brks <- c() #  "rugarch"  "s2"       "sandwich"
 
 for (pkg in lst) {
 
