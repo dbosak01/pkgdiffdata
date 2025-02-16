@@ -12,7 +12,7 @@ mt <- cranlogs::cran_top_downloads(count = 100)
 
 
 # Test
-res <- create_package_data("procs")
+res <- create_package_data("Deriv")
 
 
 # Test vector
