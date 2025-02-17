@@ -15,10 +15,10 @@ spkgs <- pkgdiff:::github_packages()
 
 lst <- apkgs$Package[!apkgs$Package %in% names(spkgs)]
 
-lst <- lst[!lst %in% c("Matrix") ]
+lst <- lst[!lst %in% c("Matrix", "prabclus") ]
 
-popularity <- 15000
-brks <- c() #  "EbayesThresh" "ellipse"      "leaps"
+popularity <- 10000
+brks <- c() #  "EbayesThresh" "ellipse" "leaps"  "seqinr" "TSP"
 
 for (pkg in lst) {
 
