@@ -142,8 +142,12 @@ length(ml)
 
 "huxtable" %in% names(ml)
 
+csp <- pkg_cache()
+cvp <- pkg_repo()
 
-for (pkg in names(ml)) {
+ml <- cvp$Package[!cvp$Package %in% csp$data$Package]
+
+for (pkg in ml) {
 
   res <- create_package_data(pkg)
 
