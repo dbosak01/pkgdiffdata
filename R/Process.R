@@ -7,8 +7,8 @@ apkgs <- pkgdiff:::available_packages()
 spkgs <- pkgdiff:::github_packages()
 
 
-apkgs[apkgs$Package == 'Matrix', ]
-apkgs <- apkgs[seq(10747, nrow(apkgs)), ]
+# apkgs[apkgs$Package == 'Matrix', ]
+# apkgs <- apkgs[seq(10747, nrow(apkgs)), ]
 
 # For now, filter by top downloads
 # tlst <- cran_top_downloads(count = 100)
@@ -17,8 +17,8 @@ lst <- apkgs$Package[!apkgs$Package %in% names(spkgs)]
 
 lst <- lst[!lst %in% c("Matrix") ]
 
-popularity <- 20000
-brks <- c() #  "rugarch"  "s2"       "sandwich"
+popularity <- 15000
+brks <- c() #  "EbayesThresh" "ellipse"      "leaps"
 
 for (pkg in lst) {
 
@@ -40,5 +40,11 @@ for (pkg in lst) {
     }
   }
 }
+
+
+ml <- update_package_list()
+length(ml)
+
+
 
 
