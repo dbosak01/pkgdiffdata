@@ -67,9 +67,26 @@ update_package_list <- function() {
 
   save(pkver, file = pf)
 
+  uf <- "LastUpdate.RData"
+  if (file.exists(uf))
+    unlink(uf)
+
+  tm <- now_utc()
+
+  save(tm, file = uf)
+
+
   return(pkver)
 
 }
+
+now_utc <- function() {
+  now <- Sys.time()
+  attr(now, "tzone") <- "UTC"
+  now
+}
+
+
 
 # ml <- update_package_list()
 # length(ml)
