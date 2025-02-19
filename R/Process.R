@@ -17,10 +17,18 @@ lst <- apkgs$Package[!apkgs$Package %in% names(spkgs)]
 
 # These fail for some reason
 lst <- lst[!lst %in% c("Matrix", "prabclus", "EbayesThresh",
-                       "ellipse", "leaps",  "seqinr", "TSP") ]
+                       "ellipse", "leaps",  "seqinr", "TSP", "Rglpk",
+                       "metan",         "metR",          "microeco",
+                       "Microsoft365R", "mirai",         "misty",
+                       "mlr3cluster",   "mlr3filters",   "mlr3fselect",
+                       "mlr3pipelines", "mlr3verse",     "rlas",
+                       "rle",           "rlemon") ]
 
-popularity <- 5000
-brks <- c() #  "EbayesThresh" "ellipse" "leaps"  "seqinr" "TSP"
+
+
+
+popularity <- 1500
+brks <- c()
 
 for (pkg in lst) {
 
