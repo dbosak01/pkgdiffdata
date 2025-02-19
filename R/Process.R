@@ -27,7 +27,7 @@ lst <- lst[!lst %in% c("Matrix", "prabclus", "EbayesThresh",
 
 
 
-popularity <- 1500
+popularity <- 1250
 brks <- c()
 
 for (pkg in lst) {
@@ -52,7 +52,7 @@ for (pkg in lst) {
 }
 
 
-ml <- update_package_list()
+   ml <- update_package_list()
 length(ml)
 
 
