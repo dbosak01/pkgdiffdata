@@ -22,12 +22,13 @@ lst <- lst[!lst %in% c("Matrix", "prabclus", "EbayesThresh",
                        "Microsoft365R", "mirai",         "misty",
                        "mlr3cluster",   "mlr3filters",   "mlr3fselect",
                        "mlr3pipelines", "mlr3verse",     "rlas",
-                       "rle",           "rlemon") ]
+                       "rle",           "rlemon","adaptivetau","additivityTests",
+                       "cheapr", "dendroTools", "sdcTable") ]
 
 
 
 
-popularity <- 1250
+popularity <- 1000
 brks <- c()
 
 for (pkg in lst) {
@@ -52,7 +53,7 @@ for (pkg in lst) {
 }
 
 
-   ml <- update_package_list()
+ml <- update_package_list()
 length(ml)
 
 
