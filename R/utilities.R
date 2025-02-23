@@ -27,6 +27,58 @@ create_package_data <- function(pkg) {
   return(ret)
 }
 
+update_package_data <- function(pkg) {
+
+  #browser()
+  ret <- NULL
+
+  verdat <- pkgdiff:::get_all_versions(pkg, skip_size = TRUE)
+  ginfos <- pkgdiff:::github_package(pkg)
+
+  gvers <- names(ginfos$infos)
+
+  sq <- seq(nrow(verdat), 1)
+  for (idx in sq) {
+
+    # browser()
+    tver <- verdat$Version[idx]
+    if (!tver %in% gvers) {
+      nlst <- list()
+      info <- pkgdiff:::get_info_cran(pkg, tver)
+      nlst[[tver]] <- info
+      ginfos$infos <- c(nlst, ginfos$infos)
+      pver <- verdat$Version[idx + 1]
+      if (!is.na(pver)) {
+        mginfos <- ginfos$infos[c(tver, pver)]
+        nrw <- pkgdiff:::get_info_data(pkg, mginfos, skip_first = TRUE)
+        if (!is.null(nrw)) {
+          if (nrow(nrw) > 1) {
+            ginfos$stability <- rbind(nrw[1, ], ginfos$stability)
+          } else if (nrow(nrw) == 1) {
+            ginfos$stability <- rbind(nrw, ginfos$stability)
+          }
+          rownames(ginfos$stability) <- NULL
+        }
+      }
+      ret <- ginfos
+    }
+  }
+
+  # browser()
+
+  if (!is.null(ret)) {
+
+    fl <- file.path("data", paste0(pkg, ".RData"))
+
+    if (file.exists(fl))
+      file.remove(fl)
+
+    save(ret, file = fl)
+  }
+
+  return(ret)
+}
+
 
 local_package <- function(pth) {
 

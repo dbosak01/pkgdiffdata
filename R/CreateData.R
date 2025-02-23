@@ -5,13 +5,15 @@ remotes::install_github("https://github.com/dbosak01/pkgdiff")
 
 
 library(pkgdiff)
+library(cranlogs)
 
+res1 <- cranlogs::cran_downloads("fmtr", when = "last-month")
 
-
+res1
 mt <- cranlogs::cran_top_downloads(count = 100)
 
 pkg <- "bayess"
-pkg <- "duckdb"
+pkg <- "tidymodels"
 pkgdiff:::github_packages(pkg)
 
 pkg_info(pkg)
