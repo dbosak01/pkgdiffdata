@@ -1,7 +1,7 @@
 
 library(cranlogs)
 library(pkgdiff)
-
+library(common)
 
 apkgs <- pkgdiff:::available_packages()
 spkgs <- pkgdiff:::github_packages()
