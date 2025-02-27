@@ -4,7 +4,7 @@ library(cranlogs)
 library(pkgdiff)
 library(common)
 
-source("./utilities.R")
+source("./R/utilities.R")
 
 apkgs <- pkgdiff:::available_packages()
 svect <- pkgdiff:::github_packages()
