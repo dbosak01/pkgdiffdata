@@ -20,13 +20,18 @@ for (pkg in names(svect)) {
   sver <- svect[pkg]
   aver <- avect[pkg]
 
-  if (sver != aver) {
+  # print(pkg)
+  # print(sver)
+  # print(aver)
+  if (!is.na(sver) && !is.na(aver)) {
+    if (sver != aver) {
 
-    print(paste0("Updating '", pkg, "' ", svect[pkg], " -> ", avect[pkg]))
+      print(paste0("Updating '", pkg, "' ", svect[pkg], " -> ", avect[pkg]))
 
-    npkg <- update_package_data(pkg)
-    print(npkg$stability)
+      npkg <- update_package_data(pkg)
+      print(npkg$stability)
 
+    }
   }
 
 }
