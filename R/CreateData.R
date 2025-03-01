@@ -1,7 +1,7 @@
 
 
-remotes::install_github("https://github.com/dbosak01/pkgdiff")
-install.packages("c:/packages/pkgdiff_0.1.2.tar.gz", repos =NULL, type = "source")
+# remotes::install_github("https://github.com/dbosak01/pkgdiff")
+# install.packages("c:/packages/pkgdiff_0.1.2.tar.gz", repos =NULL, type = "source")
 
 
 library(pkgdiff)

@@ -57,5 +57,5 @@ ml <- update_package_list()
 length(ml)
 
 
-# create_package_data("nlmixr2est")
+# create_package_data("zoo")
 

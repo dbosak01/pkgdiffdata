@@ -17,8 +17,10 @@ names(avect) <- tpkgs$Package
 
 
 for (pkg in names(svect)) {
+  sver <- svect[pkg]
+  aver <- avect[pkg]
 
-  if (svect[pkg] != avect[pkg]) {
+  if (sver != aver) {
 
     print(paste0("Updating '", pkg, "' ", svect[pkg], " -> ", avect[pkg]))
 
