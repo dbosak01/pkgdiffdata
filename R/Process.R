@@ -23,7 +23,7 @@ lst <- lst[!lst %in% c("Matrix", "prabclus", "EbayesThresh",
                        "mlr3cluster",   "mlr3filters",   "mlr3fselect",
                        "mlr3pipelines", "mlr3verse",     "rlas",
                        "rle",           "rlemon","adaptivetau","additivityTests",
-                       "cheapr", "dendroTools", "sdcTable") ]
+                       "cheapr", "dendroTools", "sdcTable", "Rmosek") ]
 
 
 
