@@ -1,7 +1,7 @@
 library(pkgdiff)
 library(common)
 
-
+# Create package data from beginning
 create_package_data <- function(pkg) {
 
   ret <- list()
@@ -27,6 +27,7 @@ create_package_data <- function(pkg) {
   return(ret)
 }
 
+# Updates info with latest release
 update_package_data <- function(pkg) {
 
   #browser()
@@ -94,6 +95,7 @@ local_package <- function(pth) {
 
 }
 
+# Update the cache package list
 update_package_list <- function() {
 
   d <- "./data"
