@@ -19,7 +19,7 @@ pkgdiff:::github_packages(pkg)
 pkg_info(pkg)
 
 # Test
-res <- create_package_data(pkg)
+res <- create_package_data("commonmark")
 
 
 # Test vector
