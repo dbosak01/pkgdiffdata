@@ -44,6 +44,7 @@ for (pkg in lst) {
       res <- tryCatch({create_package_data(pkg)},
                error = function(er){NULL})
 
+
       if (is.null(res)) {
         brks[length(brks) + 1] <- pkg
       }
