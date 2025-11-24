@@ -28,8 +28,13 @@ for (pkg in names(svect)) {
 
       print(paste0("Updating '", pkg, "' ", svect[pkg], " -> ", avect[pkg]))
 
-      npkg <- update_package_data(pkg)
-      print(npkg$stability)
+      npkg <- tryCatch({update_package_data(pkg)},
+                       error = function(cond){NULL})
+
+      if (!is.null(npkg)) {
+
+        print(npkg$stability)
+      }
 
     }
   }
