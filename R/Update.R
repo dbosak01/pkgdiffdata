@@ -34,6 +34,9 @@ for (pkg in names(svect)) {
       if (!is.null(npkg)) {
 
         print(npkg$stability)
+      } else {
+
+        print(paste0("Update failed for '", pkg, "'"))
       }
 
     }
