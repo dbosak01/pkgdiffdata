@@ -58,5 +58,5 @@ ml <- update_package_list()
 length(ml)
 
 
-# create_package_data("zoo")
+# create_package_data("macro")
 
