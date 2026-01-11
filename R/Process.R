@@ -25,9 +25,6 @@ lst <- lst[!lst %in% c("Matrix", "prabclus", "EbayesThresh",
                        "rle",           "rlemon","adaptivetau","additivityTests",
                        "cheapr", "dendroTools", "sdcTable", "Rmosek") ]
 
-
-
-
 popularity <- 1000
 brks <- c()
 
